@@ -5,6 +5,12 @@ from topics import TOPICS
 
 st.set_page_config(page_title="KI-Lehrling", page_icon="🧠", layout="centered")
 
+from conference_mode import run_conference
+
+if st.query_params.get("conference") == "1":
+    run_conference()
+    st.stop()
+
 CORE_PROMPT = '''
 Du bist ein adaptiver KI-Lehrling.
 
